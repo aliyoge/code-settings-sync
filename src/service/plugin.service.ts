@@ -235,7 +235,10 @@ export class PluginService {
         notificationCallBack("");
         addedExtensions.push(ext);
       } catch (err) {
-        throw new Error(err);
+        // throw new Error(err);
+        notificationCallBack("");
+        notificationCallBack(`[x] - EXTENSION: ${ext.name} INSTALLFAILED.`);
+        notificationCallBack("");
       }
     }
     return addedExtensions;
